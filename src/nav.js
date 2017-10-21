@@ -13,6 +13,9 @@ const NavContainer = styled.nav`
   justify-content: center;
 `
 
+// Built from the Link Component in preact-router/match
+// Adds support for an active link state.
+// The Link element that has the matching path will have different styles
 const NavItem = ({ path, ...props }) => (
   <Match path={path || props.href}>
     { ({ matches }) => (<Link primary={matches} {...props}/>) }
