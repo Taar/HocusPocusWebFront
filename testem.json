@@ -1,0 +1,4 @@
+{
+  "framework": "tap",
+  "src_files": [ "build/test.js" ]
+}
