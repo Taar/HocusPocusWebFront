@@ -22,7 +22,12 @@ module.exports = {
   ],
   resolve: {
     modules: [nodeModules],
-    extensions: ['.js', '.json']
+    extensions: ['.js', '.json'],
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat',
+      'create-react-class': 'preact-compat/lib/create-react-class',
+    }
   },
   module: {
     rules: [
@@ -42,8 +47,8 @@ module.exports = {
         test: /\.js$/,
         include: appSrc,
         query: {
-          plugins: [ ['transform-es2015-for-of', { loose: true }] ],
-          presets: ['es2015']
+          plugins: [ 'babel-plugin-styled-components', ['transform-es2015-for-of', { loose: true }] ],
+          presets: ['es2015', 'stage-0', 'react']
         }
       }
     ]
