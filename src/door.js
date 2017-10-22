@@ -31,6 +31,7 @@ class Door extends Component {
     return (
       <Grid>
         <Password type="password" value={password}
+            placeholder="password eg. hunter2"
             onInput={linkState(this, 'password')} />
         <HocusPocus primary>Hocus Pocus</HocusPocus>
       </Grid>
